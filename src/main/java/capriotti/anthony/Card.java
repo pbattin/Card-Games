@@ -11,18 +11,19 @@ public class Card {
     Rank rank;
 
     public Card(int suit, int rank){
+
         this.suit = Suit.values()[suit];
         this.rank = Rank.values()[rank];
     }
 
     public Suit getSuit() {
+
         return suit;
     }
 
     public Rank getRank() {
+
         return rank;
     }
-
-
 }
 

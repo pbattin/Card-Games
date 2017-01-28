@@ -25,7 +25,6 @@ public class DeckTest {
          int expected = 52;
          int actual = test.getDeckSize();
          assertEquals("testing the deck size", expected, actual);
-        System.out.println(test.getRandomSuit());
     }
 
     @Test

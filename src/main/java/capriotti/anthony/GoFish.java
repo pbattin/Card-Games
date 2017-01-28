@@ -1,7 +1,6 @@
 package capriotti.anthony;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 
 /**
  * Created by prestonbattin on 1/27/17.
@@ -27,7 +26,9 @@ public class GoFish extends CardGame {
     protected void setHands(){
 
         for(int i = 0; i < 7; i++){
+
             dealerDraws();
+
             playerDraws();
         }
     }
@@ -35,9 +36,8 @@ public class GoFish extends CardGame {
     public GoFish(){
 
         super();
+
         setHands();
-
-
     }
 
     public int getPlayersHandCount() {
@@ -52,6 +52,7 @@ public class GoFish extends CardGame {
             if (dealersHand.get(i).getRank() == rank) {
 
                 playersHand.add(dealersHand.get(i));
+
                 dealersHand.remove(i);
             }
         }
@@ -62,29 +63,16 @@ public class GoFish extends CardGame {
         return dealersHand.size();
     }
 
-    public void getDealersRanks(){
-
-          Iterator<Card> itr = dealersHand.iterator();
-           while (itr.hasNext()) {
-               Card rank = itr.next();
-               System.out.println(rank.rank);
-           }
-       }
-
-
     public void dealerAskForRank(Card.Rank rank){
 
-            for(int i =0; i < playersHand.size(); i++) {
+        for(int i =0; i < playersHand.size(); i++) {
 
-                if (playersHand.get(i).getRank() == rank) {
+            if (playersHand.get(i).getRank() == rank) {
 
                     dealersHand.add(playersHand.get(i));
+
                     playersHand.remove(i);
                 }
             }
     }
-
-
-
-
 }
