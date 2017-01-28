@@ -85,5 +85,6 @@ public class GoFishTest {
         int actual = test.getDealersHandCount();
         Assert.assertEquals("If dealer has Ace, will give them to player", expected, actual);
     }
+
     }
 

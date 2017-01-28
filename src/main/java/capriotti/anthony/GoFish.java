@@ -1,14 +1,15 @@
 package capriotti.anthony;
 
-import java.util.ArrayList;
-
 /**
  * Created by prestonbattin on 1/27/17.
  */
 public class GoFish extends CardGame {
 
-   public ArrayList<Card> playersHand = new ArrayList<>();
-   public ArrayList<Card> dealersHand = new ArrayList<>();
+    CheckForPairs checkForPairs = new CheckForPairs();
+    int playerBookCount;
+    int dealerBookCount;
+
+
 
     @Override
     public void dealerDraws(){
@@ -40,11 +41,6 @@ public class GoFish extends CardGame {
         setHands();
     }
 
-    public int getPlayersHandCount() {
-
-        return playersHand.size();
-    }
-
     public void playAskForRank(Card.Rank rank) {
 
         for (int i = 0; i < dealersHand.size(); i++) {
@@ -56,11 +52,6 @@ public class GoFish extends CardGame {
                 dealersHand.remove(i);
             }
         }
-    }
-
-    public int getDealersHandCount() {
-
-        return dealersHand.size();
     }
 
     public void dealerAskForRank(Card.Rank rank){
@@ -75,4 +66,32 @@ public class GoFish extends CardGame {
                 }
             }
     }
+
+    public void checkForPlayerPairs(){
+
+        checkForPairs.setRankCount(playersHand);
+    }
+
+    public void removeBooks(){
+
+        while(checkForPairs.getBook() != null){
+
+            System.out.println("You have a book of " + checkForPairs.getBook());
+            playerBookCount++;
+
+            for(int i = 0; i < getPlayersHandCount(); i++){
+
+                if(playersHand.get(i).getRank().equals(checkForPairs.getBook())){
+
+                    playersHand.remove(i);
+                }
+            }
+
+
+        }
+    }
+
+
+
+
 }

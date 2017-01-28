@@ -1,12 +1,15 @@
 package capriotti.anthony;
 
+import java.util.ArrayList;
+
 /**
  * Created by prestonbattin on 1/27/17.
  */
 public abstract class CardGame {
 
-    Deck deck;
-    Card card;
+   private Deck deck;
+   public ArrayList<Card> playersHand = new ArrayList<>();
+   public ArrayList<Card> dealersHand = new ArrayList<>();
 
    protected CardGame(){
 
@@ -15,7 +18,7 @@ public abstract class CardGame {
 
    protected Card drawOne(){
 
-        return card = deck.drawOne();
+        return deck.drawOne();
     }
 
    abstract void dealerDraws();
@@ -24,5 +27,14 @@ public abstract class CardGame {
 
    protected abstract void setHands();
 
+   public int getPlayersHandCount() {
+
+        return playersHand.size();
+    }
+
+   public int getDealersHandCount() {
+
+        return dealersHand.size();
+    }
 
 }

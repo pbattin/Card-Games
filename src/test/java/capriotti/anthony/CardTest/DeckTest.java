@@ -30,8 +30,8 @@ public class DeckTest {
     @Test
     public void drawOneTest(){
 
-        int expected = 51;
         test.drawOne();
+        int expected = 51;
         int actual = test.getDeckSize();
         assertEquals("Testing drawing a card",expected,actual);
     }
