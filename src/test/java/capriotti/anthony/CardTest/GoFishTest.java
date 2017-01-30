@@ -86,5 +86,5 @@ public class GoFishTest {
         Assert.assertEquals("If dealer has Ace, will give them to player", expected, actual);
     }
 
-    }
+}
 
