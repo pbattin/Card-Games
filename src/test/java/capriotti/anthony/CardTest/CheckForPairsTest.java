@@ -22,10 +22,11 @@ public class CheckForPairsTest {
     public void setup() {
 
        cards = new ArrayList<>();
-       cards.add(card1);
-       cards.add(card1);
-       cards.add(card1);
-       cards.add(card1);
+
+       for(int i = 0; i < 4; i++){
+
+           cards.add(card1);
+       }
 
        pairs = new CheckForPairs();
 

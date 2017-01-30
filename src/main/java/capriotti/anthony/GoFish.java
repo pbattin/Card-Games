@@ -3,13 +3,13 @@ package capriotti.anthony;
 /**
  * Created by prestonbattin on 1/27/17.
  */
+@SuppressWarnings("Duplicates")
+
 public class GoFish extends CardGame {
 
     CheckForPairs checkForPairs = new CheckForPairs();
     int playerBookCount;
     int dealerBookCount;
-
-
 
     @Override
     public void dealerDraws(){
@@ -72,7 +72,7 @@ public class GoFish extends CardGame {
         checkForPairs.setRankCount(playersHand);
     }
 
-    public void removeBooks(){
+    public void removePlayerBooks(){
 
         while(checkForPairs.getBook() != null){
 
@@ -84,6 +84,30 @@ public class GoFish extends CardGame {
                 if(playersHand.get(i).getRank().equals(checkForPairs.getBook())){
 
                     playersHand.remove(i);
+                }
+            }
+
+
+        }
+    }
+
+    public void checkForDealerPairs(){
+
+        checkForPairs.setRankCount(dealersHand);
+    }
+
+    public void removeDealerBooks(){
+
+        while(checkForPairs.getBook() != null){
+
+            System.out.println("You have a book of " + checkForPairs.getBook());
+            dealerBookCount++;
+
+            for(int i = 0; i < getPlayersHandCount(); i++){
+
+                if(dealersHand.get(i).getRank().equals(checkForPairs.getBook())){
+
+                    dealersHand.remove(i);
                 }
             }
 

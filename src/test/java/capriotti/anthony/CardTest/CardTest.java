@@ -5,6 +5,7 @@ package capriotti.anthony.CardTest;
  */
 import capriotti.anthony.Card;
 import capriotti.anthony.Card.*;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import static org.junit.Assert.*;
@@ -32,6 +33,16 @@ public class CardTest {
         Rank expected = Rank.KING;
         Rank actual = test.getRank();
         assertEquals("Testing rank",expected,actual);
+    }
+
+    @Test
+    public void valuesTest(){
+
+
+        double expected = 10;
+        double actual = test.getRank().getValue();
+        Assert.assertEquals("Testing the value", expected,actual,0);
+
     }
 
 
